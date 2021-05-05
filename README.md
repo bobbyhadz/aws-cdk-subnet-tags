@@ -1,8 +1,7 @@
-# Article name here
+# How to Tag Subnets in AWS CDK
 
 A repository for an article on
-[bobbyhadz.com](https://bobbyhadz.com/blog/aws-s3-presigned-url-react)
-`<- Update Link`
+[bobbyhadz.com](https://bobbyhadz.com/blog/aws-cdk-subnet-tags)
 
 ## How to Use
 
