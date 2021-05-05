@@ -6,6 +6,7 @@ export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+    // 👇 create VPC
     const vpc = new ec2.Vpc(this, 'my-cdk-vpc', {
       cidr: '10.0.0.0/16',
       natGateways: 0,
@@ -24,6 +25,7 @@ export class CdkStarterStack extends cdk.Stack {
       ],
     });
 
+    // 👇 define function that tags subnets
     const tagAllSubnets = (
       subnets: ec2.ISubnet[],
       tagName: string,
@@ -37,9 +39,12 @@ export class CdkStarterStack extends cdk.Stack {
       }
     };
 
+    // 👇 tag subnets
     const {stackName} = cdk.Stack.of(this);
-
     tagAllSubnets(vpc.publicSubnets, 'Name', `${stackName}/public`);
     tagAllSubnets(vpc.isolatedSubnets, 'Name', `${stackName}/isolated`);
+
+    tagAllSubnets(vpc.publicSubnets, 'env', 'staging');
+    tagAllSubnets(vpc.isolatedSubnets, 'env', 'dev');
   }
 }
