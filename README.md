@@ -1,7 +1,7 @@
 # How to Tag Subnets in AWS CDK
 
 A repository for an article on
-[bobbyhadz.com](https://bobbyhadz.com/blog/aws-cdk-subnet-tags)
+[bobbyhadz.com](https://bobbyhadz.com/blog/aws-cdk-subnet-selection)
 
 > If you use CDK v1, switch to the cdk-v1 branch
 
